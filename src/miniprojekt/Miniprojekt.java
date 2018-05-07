@@ -6,6 +6,7 @@ public class Miniprojekt {
 		// TODO Auto-generated method stub
 		// Hello
 		System.out.println("Hello world");
+		//Hahaeksde
 	}
 
 }
