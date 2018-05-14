@@ -47,12 +47,13 @@ public class Miniprojekt {
 	private class HashIterator {
 	
 		public boolean hasNext() {
-		
-		
+			
+			return true;
 		}
 	
-		public E next() {
+		public String next() {
 		
+			return "";
 		}
 	
 		public void remove() {}
