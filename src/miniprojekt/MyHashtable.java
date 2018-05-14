@@ -53,11 +53,21 @@ class MyHashtable {
 		return find(s, s.hashCode());
 	}
 	
+	public Iterator<String> iterator(){
+		return new HashIterator();
+	}
 	
-	private class HashIterator {
+	
+	private class HashIterator implements Iterator{
 		
 		private int count = 0;
 		
+		public HashIterator() {
+			if(isEmpty()){
+				return;
+			}
+			
+		}
 		
 		public boolean hasNext() {
 			
