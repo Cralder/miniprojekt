@@ -53,4 +53,25 @@ class MyHashtable {
 		return find(s, s.hashCode());
 	}
 	
+	
+	private class HashIterator {
+		
+		private int count = 0;
+		
+		
+		public boolean hasNext() {
+			
+			return count < table.length;
+		}
+	
+		public String next() {
+			String out = table[count];
+			count++;
+			return out;
+		}
+	
+		public void remove() {}
+	
+	}
+	
 }
