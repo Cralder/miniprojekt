@@ -78,7 +78,7 @@ class MyHashtable {
 			return count < table.length;
 		}
 	
-		public CountNode next() {
+		public String next() {
 			CountNode out = table[count];
 			String output = out.getString();
 			count++;
