@@ -44,4 +44,18 @@ public class Miniprojekt {
 		
 	}
 
+	private class HashIterator {
+	
+		public boolean hasNext() {
+		
+		
+		}
+	
+		public E next() {
+		
+		}
+	
+		public void remove() {}
+	
+	}
 }
