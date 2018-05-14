@@ -3,14 +3,58 @@ package miniprojekt;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Miniprojekt {
 
+	public static MyHashtable readFile(Scanner scan, Iterator<CountNode> itr)
+	{
+		String current;
+		MyHashtable table = new MyHashtable();
+		int totalLength = 0;
+		
+		while(scan.hasNextLine())
+		{
+			current = scan.nextLine();
+			
+
+			
+
+			String[] temp = current.split("\\t|,|;|\\.|\\?|!|-|:|@|\\[|\\]|\\(|\\)|\\{|\\}|_|\\*|/");
+			
+			for(int i = 0; i < temp.length; i++)
+			{
+				CountNode currentKeyword;
+				while(itr.hasNext())
+				{
+					currentKeyword = itr.next();
+					
+					if(!currentKeyword.getString().equals(temp[i]))
+					{
+						
+						table.put(temp[i]);
+						totalLength++;
+						
+					}else {
+						
+						totalLength++;
+					
+					}
+				}
+			}
+			
+		}
+		
+		return table;
+	}
+	 
+	
+	
 	public static void main(String[] args) {
 		
 		MyHashtable keywordTable = new MyHashtable();
-		
+		Iterator<CountNode> itr = keywordTable.iterator();
 		
 		try {
 			Scanner keywords = new Scanner(new File("src\\miniprojekt\\javanyckelord.txt"));
@@ -20,34 +64,24 @@ public class Miniprojekt {
 			cmd.close();
 			System.out.println(keywords.next());
 			
-			String current;
+
 			
 			while(keywords.hasNext())
 			{
 				keywordTable.put(keywords.next());
 			}
 			
-			while(in1.hasNext())
-			{
-				current = in1.nextLine();
-				
-				
-				MyHashtable in1Table = new MyHashtable();
-				String[] temp = current.split("\\t|,|;|\\.|\\?|!|-|:|@|\\[|\\]|\\(|\\)|\\{|\\}|_|\\*|/");
-				
-				for(int i = 0; i < temp.length; i++)
-				{
-					if(temp[i])
-				}
-				
-				for(int i = 0; i < temp.length; i++) {
-					in1Table.put(temp[i]);
-				}
-				
-				
+			
+			MyHashtable in1Table = readFile(in1, itr);
+			
+			itr = keywordTable.iterator(); //Testa om nåt går fel
+			
+			MyHashtable in2Table = readFile(in2, itr);
+			
+			
 				
 
-			}
+			
 			
 			in1.close();
 			in2.close();
