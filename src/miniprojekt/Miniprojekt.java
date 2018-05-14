@@ -74,7 +74,7 @@ public class Miniprojekt {
 			
 			MyHashtable in1Table = readFile(in1, itr);
 			
-			itr = keywordTable.iterator(); //Testa om nåt går fel
+			itr = keywordTable.iterator(); //Testa om nÃ¥t gÃ¥r fel
 			
 			MyHashtable in2Table = readFile(in2, itr);
 			
