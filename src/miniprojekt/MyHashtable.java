@@ -69,8 +69,6 @@ class MyHashtable {
 				return;
 			}
 			
-			
-			
 		}
 		
 		public boolean hasNext() {
