@@ -23,5 +23,28 @@ class MyHashtable {
 		}
 		
 	}
+
+	
+	
+	private class HashIterator {
+		
+		private int count = 0;
+		
+		
+		public boolean hasNext() {
+			
+			return count < table.length;
+		}
+	
+		public String next() {
+			
+			
+			count++;
+			return "";
+		}
+	
+		public void remove() {}
+	
+	}
 	
 }
