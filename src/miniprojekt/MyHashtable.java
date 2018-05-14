@@ -1,5 +1,7 @@
 package miniprojekt;
 
+import java.util.Iterator;
+
 class MyHashtable {
 	
 	public CountNode[] table;
@@ -55,11 +57,21 @@ class MyHashtable {
 		return find(s, s.hashCode());
 	}
 	
+	public Iterator<String> iteratorx(){
+		return new HashIterator();
+	}
 	
-	private class HashIterator {
+	
+	private class HashIterator implements Iterator<String>{
 		
 		private int count = 0;
 		
+		public HashIterator() {
+			if(table.length == 0){
+				return;
+			}
+			
+		}
 		
 		public boolean hasNext() {
 			
