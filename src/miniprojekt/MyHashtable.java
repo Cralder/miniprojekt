@@ -2,10 +2,10 @@ package miniprojekt;
 
 class MyHashtable {
 	
-	public String[] table;
+	public CountNode[] table;
 	
 	public MyHashtable(int initialcapacity) {
-		table = new String[initialcapacity];
+		table = new CountNode[initialcapacity];
 	}
 	
 	public MyHashtable() {
@@ -16,7 +16,7 @@ class MyHashtable {
 		
 		
 		if(i > table.length) {
-			String[] temp = new String[table.length*2];
+			CountNode[] temp = new CountNode[table.length*2];
 			for(int j = 0; j<table.length; j++) {
 				temp[j] = table[j];
 			}
@@ -25,7 +25,9 @@ class MyHashtable {
 			
 		}else{
 			if(table[i].equals(null)) {
-				table[i] = s;
+				table[i] = new CountNode(s, 1);
+			}else if(table[i].getString().equals(s)) {
+				table[i].inc();
 			}else {
 				put(s, i^2);
 			}
@@ -64,8 +66,8 @@ class MyHashtable {
 			return count < table.length;
 		}
 	
-		public String next() {
-			String out = table[count];
+		public CountNode next() {
+			CountNode out = table[count];
 			count++;
 			return out;
 		}
