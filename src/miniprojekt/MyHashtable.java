@@ -78,11 +78,10 @@ class MyHashtable {
 			return count < table.length;
 		}
 	
-		public String next() {
+		public CountNode next() {
 			CountNode out = table[count];
-			String output = out.getString();
 			count++;
-			return output;
+			return out;
 		}
 	
 		public void remove() {}
