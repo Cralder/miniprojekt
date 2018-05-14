@@ -23,7 +23,6 @@ class MyHashtable {
 		}
 		
 	}
-
 	
 	
 	private class HashIterator {
@@ -37,10 +36,9 @@ class MyHashtable {
 		}
 	
 		public String next() {
-			
-			
+			String out = table[count];
 			count++;
-			return "";
+			return out;
 		}
 	
 		public void remove() {}
