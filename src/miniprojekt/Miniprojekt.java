@@ -22,16 +22,23 @@ public class Miniprojekt {
 			String current;
 			String keyword;
 			
-			while(in1.hasNext()) {
-				current = in1.next();
+			while(in1.hasNext())
+			{
+				current = in1.nextLine();
+				String[] Codes = current.split("\\t|,|;|\\.|\\?|!|-|:|@|\\[|\\]|\\(|\\)|\\{|\\}|_|\\*|/");
 				
-				while(keywords.hasNext()) {
-					keyword = keywords.next();
+				while(keywords.hasNext())
+				{
 					
-					if(current.equals(keyword)) {
-						table.put(keyword, 1);
+					if(current == keywords.next())
+					{
+						table.put(current, 1);
 					}
+					
+					
+					
 				}
+
 			}
 			
 			in1.close();
