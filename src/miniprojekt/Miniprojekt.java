@@ -75,9 +75,13 @@ public class Miniprojekt {
 			int total1 = totalLength;
 			totalLength = 0;
 			
+<<<<<<< HEAD
 			itr = keywordTable.iterator(); //Testa om nåt går fel
 			int total2 = totalLength;
 
+=======
+			itr = keywordTable.iterator(); //Testa om nÃ¥t gÃ¥r fel
+>>>>>>> bf385dbb10205cf4340f66ed0d303234c542c5e0
 			
 			MyHashtable in2Table = readFile(in2, itr);
 			
