@@ -70,11 +70,9 @@ class MyHashtable {
 			if(table.length == 0){
 				return;
 			}
-			
 		}
 		
 		public boolean hasNext() {
-			
 			return count < table.length;
 		}
 	
