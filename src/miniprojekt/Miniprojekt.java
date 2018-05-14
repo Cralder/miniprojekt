@@ -21,7 +21,7 @@ public class Miniprojekt {
 			
 			String current;
 			String keyword;
-			//eksde
+			
 			while(in1.hasNext()) {
 				current = in1.next();
 				
