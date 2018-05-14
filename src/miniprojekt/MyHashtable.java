@@ -57,12 +57,12 @@ class MyHashtable {
 		return find(s, s.hashCode());
 	}
 	
-	public Iterator<String> iteratorx(){
+	public Iterator<CountNode> iteratorx(){
 		return new HashIterator();
 	}
 	
 	
-	private class HashIterator implements Iterator<String>{
+	private class HashIterator implements Iterator<CountNode>{
 		
 		private int count = 0;
 		
