@@ -9,19 +9,48 @@ class MyHashtable {
 	}
 	
 	public MyHashtable() {
-		this(100);
+		this(64);
 	}
 	
 	public void put(String s, int i) {
 		
 		
-		
-		if(table[i].equals(null)) {
-			table[i] = s;
+		if(i > table.length) {
+			String[] temp = new String[table.length*2];
+			for(int j = 0; j<table.length; j++) {
+				temp[j] = table[j];
+			}
+			table = temp;
+			put(s, i);
+			
 		}else{
-			put(s, i^2);
+			if(table[i].equals(null)) {
+				table[i] = s;
+			}else {
+				put(s, i^2);
+			}
+			
 		}
 		
+		
+	}
+	
+	public void put(String s) {
+		put(s, s.hashCode());
+	}
+	
+	public int find(String s, int i) {
+		if(i > table.length) {
+			return -1;
+		}else if(table[i].equals(s)) {
+			return i;
+		}else {
+			return find(s, i^2);
+		}
+	}
+	
+	public int find(String s) {
+		return find(s, s.hashCode());
 	}
 	
 }
