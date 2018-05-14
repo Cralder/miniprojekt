@@ -82,7 +82,6 @@ public class Miniprojekt {
 
 			itr = keywordTable.iterator(); //Testa om något går fel
 
-			
 			MyHashtable in2Table = readFile(in2, itr);
 			
 			
