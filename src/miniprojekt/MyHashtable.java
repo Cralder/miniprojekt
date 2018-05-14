@@ -80,8 +80,9 @@ class MyHashtable {
 	
 		public CountNode next() {
 			CountNode out = table[count];
+			String output = out.getString();
 			count++;
-			return out;
+			return output;
 		}
 	
 		public void remove() {}
