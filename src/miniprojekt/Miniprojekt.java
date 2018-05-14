@@ -9,7 +9,8 @@ public class Miniprojekt {
 
 	public static void main(String[] args) {
 		
-		Hashtable<String, Integer> table = new Hashtable<String, Integer>();
+		MyHashtable keywordTable = new MyHashtable();
+		
 		
 		try {
 			Scanner keywords = new Scanner(new File("src\\miniprojekt\\javanyckelord.txt"));
@@ -20,24 +21,31 @@ public class Miniprojekt {
 			System.out.println(keywords.next());
 			
 			String current;
-			String keyword;
+			
+			while(keywords.hasNext())
+			{
+				keywordTable.put(keywords.next());
+			}
 			
 			while(in1.hasNext())
 			{
 				current = in1.nextLine();
-				String[] Codes = current.split("\\t|,|;|\\.|\\?|!|-|:|@|\\[|\\]|\\(|\\)|\\{|\\}|_|\\*|/");
 				
-				while(keywords.hasNext())
+				
+				MyHashtable in1Table = new MyHashtable();
+				String[] temp = current.split("\\t|,|;|\\.|\\?|!|-|:|@|\\[|\\]|\\(|\\)|\\{|\\}|_|\\*|/");
+				
+				for(int i = 0; i < temp.length; i++)
 				{
-					
-					if(current == keywords.next())
-					{
-						table.put(current, 1);
-					}
-					
-					
-					
+					if(temp[i])
 				}
+				
+				for(int i = 0; i < temp.length; i++) {
+					in1Table.put(temp[i]);
+				}
+				
+				
+				
 
 			}
 			
