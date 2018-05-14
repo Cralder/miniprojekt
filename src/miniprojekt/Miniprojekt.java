@@ -7,19 +7,18 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 public class Miniprojekt {
-
+	
+	static int totalLength = 0;
+	
 	public static MyHashtable readFile(Scanner scan, Iterator<CountNode> itr)
 	{
 		String current;
 		MyHashtable table = new MyHashtable();
-		int totalLength = 0;
+
 		
 		while(scan.hasNextLine())
 		{
 			current = scan.nextLine();
-			
-
-			
 
 			String[] temp = current.split("\\t|,|;|\\.|\\?|!|-|:|@|\\[|\\]|\\(|\\)|\\{|\\}|_|\\*|/");
 			
@@ -73,10 +72,16 @@ public class Miniprojekt {
 			
 			
 			MyHashtable in1Table = readFile(in1, itr);
+			int total1 = totalLength;
+			totalLength = 0;
 			
 			itr = keywordTable.iterator(); //Testa om nåt går fel
+			int total2 = totalLength;
+
 			
 			MyHashtable in2Table = readFile(in2, itr);
+			
+			
 			
 			
 				
