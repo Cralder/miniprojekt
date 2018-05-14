@@ -57,7 +57,7 @@ class MyHashtable {
 		return find(s, s.hashCode());
 	}
 	
-	public Iterator<CountNode> iteratorx(){
+	public Iterator<CountNode> iterator(){
 		return new HashIterator();
 	}
 	
