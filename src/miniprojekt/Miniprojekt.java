@@ -87,7 +87,7 @@ public class Miniprojekt {
 			
 			for(int i = 0; i < temp.length; i++)
 			{
-				//temp[i] = temp[i].trim();
+				temp[i] = temp[i].trim();
 				System.out.println(temp[i]);
 			}
 			
