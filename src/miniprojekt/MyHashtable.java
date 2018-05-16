@@ -104,7 +104,7 @@ class MyHashtable {
 		public CountNode next() {
 			CountNode out = null;
 			
-			while(out != null) {
+			while(out == null) {
 				out = table[count];
 				count++;
 			}
