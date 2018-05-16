@@ -4,6 +4,7 @@ package miniprojekt;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -89,7 +90,7 @@ public class Miniprojekt {
 			
 			for(int i = 0; i < temp.length; i++)
 			{
-				temp[i] = temp[i].trim();
+				//temp[i] = temp[i].trim();
 			}
 			
 			
@@ -102,8 +103,6 @@ public class Miniprojekt {
 				{
 					currentKeyword = itr.next();
 					
-					System.out.println(currentKeyword.getString().equals(temp[i]));
-					
 					if(!(currentKeyword.getString().equals(temp[i])))
 					{
 						table.put(temp[i]);
@@ -115,7 +114,7 @@ public class Miniprojekt {
 						
 					}
 				}
-				
+
 				itr = hashTable.iterator();
 			}
 			
@@ -151,7 +150,10 @@ public class Miniprojekt {
 			while(keywords.hasNext())
 			{
 				keywordTable.put(keywords.next());
+				System.out.println(keywordTable.toString());
 			}
+			
+
 			
 			
 			MyHashtable in1Table = readFile(in1, keywordTable);
