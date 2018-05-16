@@ -36,6 +36,7 @@ class MyHashtable {
 				size++;
 			}else if(table[i].getString().equals(s)) {
 				table[i].inc();
+				size++;
 			}else {
 				put(s, i^2);
 			}
