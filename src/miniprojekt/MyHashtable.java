@@ -59,7 +59,7 @@ class MyHashtable {
 		}else if(table[i].getString().equals(s)) {
 			return i;
 		}else {
-			return find(s, i+1);
+			return find(s, i^2);
 		}
 	}
 	

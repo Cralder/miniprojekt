@@ -51,9 +51,10 @@ public class Miniprojekt {
 				totalCount = totalCount + countAmount;	
 			}
 		}
-		System.out.println(completeLength);
-		System.out.println(totalCount);
-		double retValue = (totalCount / completeLength) * 100;
+		System.out.println("Completelength:" + completeLength);
+		System.out.println("totalcount: " + totalCount);
+		
+		double retValue =  ((double) totalCount / (double) completeLength) * 100;
 		return retValue;
 		
 	}
@@ -147,7 +148,6 @@ public class Miniprojekt {
 			MyHashtable in2Table = readFile(in2, itr);
 			int total2 = totalLength;
 
-			
 			completeLength = total1 + total2;
 			
 			print(firstpath, secondpath, comparePlagiarism(in1Table, in2Table));
