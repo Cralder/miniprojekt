@@ -5,6 +5,7 @@ import java.util.Iterator;
 class MyHashtable {
 	
 	public CountNode[] table;
+	private int size;
 	
 	public MyHashtable(int initialcapacity) {
 		table = new CountNode[initialcapacity];
@@ -14,8 +15,12 @@ class MyHashtable {
 		this(64);
 	}
 	
+	public CountNode getNode(int i) {
+		return table[i];
+	}
+	
+	
 	public void put(String s, int i) {
-		
 		
 		if(i > table.length) {
 			CountNode[] temp = new CountNode[table.length*2];
@@ -28,6 +33,7 @@ class MyHashtable {
 		}else{
 			if(table[i].equals(null)) {
 				table[i] = new CountNode(s, 1);
+				size++;
 			}else if(table[i].getString().equals(s)) {
 				table[i].inc();
 			}else {
@@ -37,6 +43,10 @@ class MyHashtable {
 		}
 		
 		
+	}
+	
+	public int size() {
+		return size;
 	}
 	
 	public void put(String s) {

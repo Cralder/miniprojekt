@@ -7,8 +7,34 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 public class Miniprojekt {
-	
+
 	static int totalLength = 0;
+	
+	
+	public static double comparePlagiarism(MyHashtable in1, MyHashtable in2)
+	{
+		Iterator<CountNode> itr1 = in1.iterator();
+		
+		while(itr1.hasNext())
+		{
+			
+			String in1Word = itr1.next().getString();
+			
+			if(in2.findBool(in1Word))
+			{
+				
+				int in2Word = in2.find(in1Word);
+				
+			}
+
+		}
+		
+		
+		
+		
+		return 0;
+	}
+	
 	
 	public static MyHashtable readFile(Scanner scan, Iterator<CountNode> itr)
 	{
@@ -42,11 +68,12 @@ public class Miniprojekt {
 			}
 			
 		}
-		
 		return table;
 	}
 	 
-	
+	public void print(String file1, String file2, double comp){
+		System.out.println(file1 + " och " + file2 + " har " + comp + "% gemensamma identifierare");
+	}
 	
 	public static void main(String[] args) {
 		
@@ -58,7 +85,7 @@ public class Miniprojekt {
 			Scanner cmd = new Scanner(System.in);
 			Scanner in1 = new Scanner(new File(cmd.next()));
 			Scanner in2 = new Scanner(new File(cmd.next()));
-			cmd.close();
+			cmd.close(); //test
 			System.out.println(keywords.next());
 			
 
@@ -74,21 +101,17 @@ public class Miniprojekt {
 			totalLength = 0;
 			
 
-			itr = keywordTable.iterator(); //Testa om nåt går fel
+			itr = keywordTable.iterator(); //Testa om nï¿½t gï¿½r fel
 			int total2 = totalLength;
 
 
-			itr = keywordTable.iterator(); //Testa om något går fel
+			itr = keywordTable.iterator(); //Testa om nï¿½got gï¿½r fel
 
 			MyHashtable in2Table = readFile(in2, itr);
 			
 			
 			
-			
-				
 
-			
-			
 			in1.close();
 			in2.close();
 			keywords.close();
