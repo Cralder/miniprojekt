@@ -111,10 +111,11 @@ public class Miniprojekt {
 				}
 				if(check) {
 					table.put(temp[i]);
+					totalLength++;
 				}
 				
 				itr = hashTable.iterator();
-				totalLength++;
+				
 			}
 			
 		}
