@@ -72,7 +72,7 @@ public class Miniprojekt {
 	}
 	 
 	public void print(String file1, String file2, double comp){
-		System.out.println(file1 + " och " + file2 + " har " + comp + "% gemensasmma identifierare");
+		System.out.println(file1 + " och " + file2 + " har " + comp + "% gemensamma identifierare");
 	}
 	
 	public static void main(String[] args) {
