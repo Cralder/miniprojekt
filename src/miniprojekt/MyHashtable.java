@@ -56,7 +56,7 @@ class MyHashtable {
 				table[i].inc();
 				size++;
 			}else {
-				put(s, i^2);
+				put(s, i++);
 			}
 			
 		}
@@ -94,7 +94,7 @@ class MyHashtable {
 		}else if(table[i].getString().equals(s)) {
 			return i;
 		}else {
-			return find(s, i^2);
+			return find(s, i++);
 		}
 	}
 	
