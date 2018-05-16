@@ -83,7 +83,7 @@ public class Miniprojekt {
 		return table;
 	}
 	 
-	public void print(String file1, String file2, double comp){
+	public static void print(Scanner file1, Scanner file2, double comp){
 		System.out.println(file1 + " och " + file2 + " har " + comp + "% gemensamma identifierare");
 	}
 	
@@ -97,10 +97,13 @@ public class Miniprojekt {
 			Scanner cmd = new Scanner(System.in);
 			Scanner in1 = new Scanner(new File(cmd.next()));
 			Scanner in2 = new Scanner(new File(cmd.next()));
-			cmd.close(); //test
-			System.out.println(keywords.next());
+			cmd.close();
 			
-
+			//System.out.println(keywords.next());
+			
+			keywords.close();
+			in1.close();
+			in2.close();
 			
 			while(keywords.hasNext())
 			{
@@ -123,10 +126,11 @@ public class Miniprojekt {
 			
 			
 			
+			
+			print(in1, in2, comparePlagiarism(in1Table, in2Table));
 
-			in1.close();
-			in2.close();
-			keywords.close();
+
+
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
