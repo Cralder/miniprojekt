@@ -75,10 +75,12 @@ public class Miniprojekt {
 	 * including the amount of times it occured
 	 */
 	
-	public static MyHashtable readFile(Scanner scan, Iterator<CountNode> itr)
+	public static MyHashtable readFile(Scanner scan, MyHashtable hashTable)
 	{
 		String current;
 		MyHashtable table = new MyHashtable();
+		
+		Iterator<CountNode> itr = hashTable.iterator();
 
 		while(scan.hasNext())
 		{
@@ -88,7 +90,6 @@ public class Miniprojekt {
 			for(int i = 0; i < temp.length; i++)
 			{
 				temp[i] = temp[i].trim();
-				System.out.println(temp[i]);
 			}
 			
 			
@@ -101,6 +102,8 @@ public class Miniprojekt {
 				{
 					currentKeyword = itr.next();
 					
+					System.out.println(currentKeyword.getString().equals(temp[i]));
+					
 					if(!(currentKeyword.getString().equals(temp[i])))
 					{
 						table.put(temp[i]);
@@ -112,7 +115,8 @@ public class Miniprojekt {
 						
 					}
 				}
-
+				
+				itr = hashTable.iterator();
 			}
 			
 		}
@@ -150,13 +154,12 @@ public class Miniprojekt {
 			}
 			
 			
-			MyHashtable in1Table = readFile(in1, itr);
+			MyHashtable in1Table = readFile(in1, keywordTable);
 			int total1 = totalLength;
 			totalLength = 0;
 
-			itr = keywordTable.iterator(); //Testa om något går fel
 
-			MyHashtable in2Table = readFile(in2, itr);
+			MyHashtable in2Table = readFile(in2, keywordTable);
 			int total2 = totalLength;
 
 			completeLength = total1 + total2;
