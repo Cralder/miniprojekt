@@ -23,8 +23,12 @@ public class Miniprojekt {
 			if(in2.findBool(in1Word))
 			{
 				int in2Word = in2.find(in1Word);
+<<<<<<< HEAD
 				
 				
+=======
+				int in2WordCount = in2.getNode(in2Word).getCount();
+>>>>>>> 41995ab743a06ae6c5a0bc46e61737b195213a3d
 			}
 
 		}
