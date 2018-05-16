@@ -114,7 +114,14 @@ public class Miniprojekt {
 		}
 		return table;
 	}
-	 
+	
+	/*
+	* Prints the filenames and the result of the comparison between the two files.  
+	* @param file1 The first file
+	* @param file2 The second file that the first file compares to
+	* @param comp The percentage of plagiarism between file1 and file2  
+	*/
+	
 	public static void print(String file1, String file2, double comp){
 		System.out.println(" Fil 1: " + file1 + " och " + "Fil 2: " + file2 + " har " + comp + "% gemensamma identifierare");
 	}
