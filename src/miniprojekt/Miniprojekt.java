@@ -12,8 +12,63 @@ public class Miniprojekt {
 	static int totalLength = 0;
 	
 	/**
+	 * Returns the inputed java files as MyHashTables 
+	 * one argument is a scanner and the other is an iterator
+	 * <p>
+	 * this method uses a scanner and an iterator to iterate a java file and 
+	 * split the identifiers into separate strings which are then put
+	 * into a MyHashTable. The method also uses the keyword text-file to
+	 * compare with the identifiers that are scanned from the java file.
+	 * If the identifier is in the keywords file it is simply added to the total length of the document
+	 * 
+	 * @param  scan the scanner that is used to read a java file
+	 * @param  itr is an iterator that you wish to use to iterate the files
+	 * @return a MyHashTable containing every identifier found inside the java file
+	 * including the amount of times it occurred
+	 */
+	
+	public static MyHashtable readFile(Scanner scan, MyHashtable hashTable)
+	{
+		String current;
+		MyHashtable table = new MyHashtable();
+		
+		Iterator<CountNode> itr = hashTable.iterator();
+
+		while(scan.hasNext())
+		{
+			current = scan.next();
+			String[] temp = current.split("\\.");
+			
+			for(int i = 0; i < temp.length; i++)
+			{
+				CountNode currentKeyword;
+				boolean check = true;
+				
+				while(itr.hasNext())
+				{
+					currentKeyword = itr.next();
+					
+					if(currentKeyword.getString().equals(temp[i]))
+					{
+						check = false;
+					}
+				}
+				if(check) {
+					table.put(temp[i]);
+					totalLength++;
+				}
+				
+				itr = hashTable.iterator();
+				
+			}
+			
+		}
+		return table;
+	}
+	
+	/**
 	 * Returns the final percentage of plagiarism in the two documents 
-	 * both arguments are the MyHashtables that will be compared to eachother
+	 * both arguments are the MyHashtables that will be compared to each other
 	 * <p>
 	 * this method compares the two MyHashTables that are inputed containing all 
 	 * identifiers from the two documents you wish to compare. 
@@ -58,60 +113,7 @@ public class Miniprojekt {
 		
 	}
 	
-	/**
-	 * Returns the inputed java files as MyHashTables 
-	 * one argument is a scanner and the other is an iterator
-	 * <p>
-	 * this method uses a scanner and an iterator to iterate a java file and 
-	 * split the identifiers into seperate strings which are then put
-	 * into a MyHashTable. The method also uses the keyword text-file to
-	 * compare with the identifiers that are scanned from the java file.
-	 * If the identifier is in the keywords file it is simply added to the total length of the document
-	 * 
-	 * @param  scan the scanner that is used to read a java file
-	 * @param  itr is an iterator that you wish to use to iterate the files
-	 * @return a MyHashTable containing every identifier found inside the java file
-	 * including the amount of times it occured
-	 */
-	
-	public static MyHashtable readFile(Scanner scan, MyHashtable hashTable)
-	{
-		String current;
-		MyHashtable table = new MyHashtable();
-		
-		Iterator<CountNode> itr = hashTable.iterator();
 
-		while(scan.hasNext())
-		{
-			current = scan.next();
-			String[] temp = current.split("\\.");
-			
-			for(int i = 0; i < temp.length; i++)
-			{
-				CountNode currentKeyword;
-				boolean check = true;
-				
-				while(itr.hasNext())
-				{
-					currentKeyword = itr.next();
-					
-					if(currentKeyword.getString().equals(temp[i]))
-					{
-						check = false;
-					}
-				}
-				if(check) {
-					table.put(temp[i]);
-					totalLength++;
-				}
-				
-				itr = hashTable.iterator();
-				
-			}
-			
-		}
-		return table;
-	}
 	
 	/**
 	* Prints the filenames and the result of the comparison between the two files.  
