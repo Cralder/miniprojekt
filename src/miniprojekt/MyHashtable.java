@@ -16,7 +16,6 @@ class MyHashtable {
 	
 	public void put(String s, int i) {
 		
-		
 		if(i > table.length) {
 			CountNode[] temp = new CountNode[table.length*2];
 			for(int j = 0; j<table.length; j++) {
@@ -59,6 +58,20 @@ class MyHashtable {
 	
 	public Iterator<CountNode> iterator(){
 		return new HashIterator();
+	}
+	
+	public boolean findBool(String s, int i) {
+		if(i > table.length) {
+			return false;
+		}else if(table[i].equals(s)) {
+			return true;
+		}else {
+			return findBool(s, i^2);
+		}
+	}
+	
+	public boolean findBool(String s) {
+		return findBool(s,s.hashCode());
 	}
 	
 	
