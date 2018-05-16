@@ -51,9 +51,9 @@ public class Miniprojekt {
 				totalCount = totalCount + countAmount;	
 			}
 		}
-		
-		double retValue = totalCount / completeLength;
-		
+		System.out.println(completeLength);
+		System.out.println(totalCount);
+		double retValue = (totalCount / completeLength) * 100;
 		return retValue;
 		
 	}
@@ -83,9 +83,12 @@ public class Miniprojekt {
 		{
 			current = scan.next();
 
-			String[] temp = current.split("\\t|,|;|\\.|\\?|!|-|:|@|\\[|\\]|\\(|\\)|\\{|\\}|_|\\*|/");
+			String[] temp = current.split("\\|,|\\+|\\-|\\=|\\<|\\>|;|\\.|\\?|!|-|:|@|\\[|\\]|\\(|\\)|\\{|\\}|_|\\*|/");
 			
-
+			for(int i = 0; i < temp.length; i++)
+			{
+				System.out.println(temp[i]);
+			}
 			
 			for(int i = 0; i < temp.length; i++)
 			{
@@ -138,18 +141,14 @@ public class Miniprojekt {
 			MyHashtable in1Table = readFile(in1, itr);
 			int total1 = totalLength;
 			totalLength = 0;
-			
-
-			itr = keywordTable.iterator(); //Testa om n�t g�r fel
-			int total2 = totalLength;
-
-			
-			completeLength = total1 + total2;
 
 			itr = keywordTable.iterator(); //Testa om n�got g�r fel
 
 			MyHashtable in2Table = readFile(in2, itr);
+			int total2 = totalLength;
 
+			
+			completeLength = total1 + total2;
 			
 			print(firstpath, secondpath, comparePlagiarism(in1Table, in2Table));
 
