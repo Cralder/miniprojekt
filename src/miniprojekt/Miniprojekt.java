@@ -79,14 +79,16 @@ public class Miniprojekt {
 		String current;
 		MyHashtable table = new MyHashtable();
 
-		while(scan.hasNextLine())
+		while(scan.hasNext())
 		{
-			current = scan.nextLine();
+			current = scan.next();
 
-			String[] temp = current.split("\\t|,|;|\\.|\\?|!|-|:|@|\\[|\\]|\\(|\\)|\\{|\\}|_|\\*|/");
+			String[] temp = current.split("\\|,|;|\\.|\\?|!|-|:|@|\\[|\\]|\\(|\\)|\\{|\\}|_|\\*|/");
+
 			
 			for(int i = 0; i < temp.length; i++)
 			{
+				
 				CountNode currentKeyword;
 				while(itr.hasNext())
 				{
@@ -97,7 +99,7 @@ public class Miniprojekt {
 						table.put(temp[i]);
 						totalLength++;
 						
-					}else {
+					} else {
 						
 						totalLength++;
 						
