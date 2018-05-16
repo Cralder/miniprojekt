@@ -99,7 +99,14 @@ class MyHashtable {
 		}
 		
 		public boolean hasNext() {
-			return count < table.length;
+			
+			for(int i = count; i < table.length; i++) {
+				if(table[i] != null) {
+					return true;
+				}
+			}
+			
+			return false;
 		}
 	
 		public CountNode next() {
