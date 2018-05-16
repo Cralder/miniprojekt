@@ -59,7 +59,7 @@ class MyHashtable {
 				put(s, i^2);
 			}
 			
-		}
+		} //henlo
 		
 	}
 	

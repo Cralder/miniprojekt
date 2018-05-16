@@ -103,7 +103,7 @@ public class Miniprojekt {
 					
 					if(!(currentKeyword.getString().equals(temp[i])))
 					{
-
+						table.put(temp[i]);
 						totalLength++;
 						
 					}else {
@@ -112,7 +112,7 @@ public class Miniprojekt {
 						
 					}
 				}
-				table.put(temp[i]);
+
 			}
 			
 		}
