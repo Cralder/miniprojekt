@@ -43,7 +43,6 @@ class MyHashtable {
 			
 		}
 		
-		
 	}
 	
 	public int size() {
