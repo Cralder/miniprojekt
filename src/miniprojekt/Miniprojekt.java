@@ -20,9 +20,11 @@ public class Miniprojekt {
 			
 			String in1Word = itr1.next().getString();
 			
-			if(in2.findbool(in1Word))
+			if(in2.findBool(in1Word))
 			{
-				in2.find(in1Word)
+				int in2Word = in2.find(in1Word);
+				
+				
 			}
 
 		}
