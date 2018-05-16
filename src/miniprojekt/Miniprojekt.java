@@ -104,11 +104,9 @@ public class Miniprojekt {
 				{
 					currentKeyword = itr.next();
 					
-					if(!(currentKeyword.getString().equals(temp[i])))
+					if(currentKeyword.getString().equals(temp[i]))
 					{
-						
 						check = false;
-						
 					}
 				}
 				if(check) {
