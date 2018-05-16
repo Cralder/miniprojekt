@@ -61,6 +61,20 @@ class MyHashtable {
 		return new HashIterator();
 	}
 	
+	public boolean findBool(String s, int i) {
+		if(i > table.length) {
+			return false;
+		}else if(table[i].equals(s)) {
+			return true;
+		}else {
+			return findBool(s, i^2);
+		}
+	}
+	
+	public boolean findBool(String s) {
+		return findBool(s,s.hashCode());
+	}
+	
 	
 	private class HashIterator implements Iterator<CountNode>{
 		
