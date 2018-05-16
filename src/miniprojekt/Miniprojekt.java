@@ -46,7 +46,9 @@ public class Miniprojekt {
 		return table;
 	}
 	 
-	
+	public void print(String file1, String file2, double comp){
+		System.out.println(file1 + " och " + file2 + " har " + comp + "% gemensasmma identifierare");
+	}
 	
 	public static void main(String[] args) {
 		
@@ -74,11 +76,11 @@ public class Miniprojekt {
 			totalLength = 0;
 			
 
-			itr = keywordTable.iterator(); //Testa om nåt går fel
+			itr = keywordTable.iterator(); //Testa om nï¿½t gï¿½r fel
 			int total2 = totalLength;
 
 
-			itr = keywordTable.iterator(); //Testa om något går fel
+			itr = keywordTable.iterator(); //Testa om nï¿½got gï¿½r fel
 
 			MyHashtable in2Table = readFile(in2, itr);
 			
