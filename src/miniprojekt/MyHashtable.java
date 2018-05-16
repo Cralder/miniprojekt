@@ -7,21 +7,21 @@ class MyHashtable {
 	public CountNode[] table;
 	private int size;
 	
-	/*
+	/**
 	 * Class constructor with initial capacity
 	 */
 	public MyHashtable(int initialcapacity) {
 		table = new CountNode[initialcapacity];
 	}
 	
-	/*
+	/**
 	 * Class constructor that decides the size of the table
 	 */
 	public MyHashtable() {
 		this(127);
 	}
 	
-	/*
+	/**
 	 * Returns the node in the table at index i
 	 * @param i The index to in which place to return the node from
 	 * @return Returns a node from the table
@@ -30,7 +30,7 @@ class MyHashtable {
 		return table[i];
 	}
 	
-	/*
+	/**
 	 * Method to insert a node in the hashtable. It checks if the index is larger than the hashtable, if it doubles the 
 	 * hashtables length and then creates a node in which the String and index becomes its values. If the index already is 
 	 * occupied it will be raised to a power 2 and try again with that index. If the string value is the same it will 
@@ -63,7 +63,7 @@ class MyHashtable {
 		
 	}
 	
-	/*
+	/**
 	 * The size of the hashtable
 	 * @return The size of the hashtable
 	 */
@@ -72,7 +72,7 @@ class MyHashtable {
 		return size;
 	}
 	
-	/*
+	/**
 	 * Put but without the index value. If it does not give a index the index will be a hash value of the word
 	 * @param s A word that is to be put in a node that has been read
 	 */
@@ -81,7 +81,7 @@ class MyHashtable {
 		put(s, new CountNode(s,1).hashCode());
 	}
 	
-	/*
+	/**
 	 * Method find that will find the index of the given string and index of the hashed value of string
 	 * @param s The string that you search for
 	 * @param i Will be the hashvalue of the String
@@ -98,7 +98,7 @@ class MyHashtable {
 		}
 	}
 	
-	/*
+	/**
 	 * Find method that searches for a given string value. The string value will be hashed and then searched for in the
 	 * other find method recursively 
 	 * @param s The string value you search for
@@ -109,7 +109,7 @@ class MyHashtable {
 		return find(s, new CountNode(s,1).hashCode());
 	}
 	
-	/*
+	/**
 	 * Gives the iterator of the CountNode class that iterates through the table
 	 * @return Iterator of type CountNode
 	 */
@@ -118,7 +118,7 @@ class MyHashtable {
 		return new HashIterator();
 	}
 	
-	/*
+	/**
 	 * Method find that will find the index of the given string and index of the hashed value of string  
 	 * @param s The string value you search for
 	 * @return True if the given string value exists in the hashtable, otherwise false
@@ -134,7 +134,7 @@ class MyHashtable {
 		}
 	}
 	
-	/*
+	/**
 	 * Find method that searches for a given string value. The string value will be hashed and then searched for in the
 	 * other find method recursively 
 	 * @param s The string value you search for
@@ -152,7 +152,7 @@ class MyHashtable {
 		private int count = 0;
 		
 		
-		/*
+		/**
 		 * Class constructor
 		 */
 		public HashIterator(){
@@ -161,7 +161,7 @@ class MyHashtable {
 			}
 		}
 		
-		/*
+		/**
 		 * (non-Javadoc)
 		 * @see java.util.Iterator#hasNext()
 		 */
@@ -175,7 +175,7 @@ class MyHashtable {
 			
 			return false;
 		}
-		/*
+		/**
 		 * (non-Javadoc)
 		 * @see java.util.Iterator#next()
 		 */
@@ -188,7 +188,7 @@ class MyHashtable {
 			}
 			return out;
 		}
-		/*
+		/**
 		 * (non-Javadoc)
 		 * @see java.util.Iterator#remove()
 		 */
