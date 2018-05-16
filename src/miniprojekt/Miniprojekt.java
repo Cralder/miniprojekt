@@ -115,7 +115,7 @@ public class Miniprojekt {
 		return table;
 	}
 	
-	/*
+	/**
 	* Prints the filenames and the result of the comparison between the two files.  
 	* @param file1 The first file
 	* @param file2 The second file that the first file compares to
