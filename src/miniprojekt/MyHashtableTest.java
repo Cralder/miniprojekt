@@ -34,7 +34,7 @@ public class MyHashtableTest {
 	public void testIterator() {
 		String test = null;
 		String string = "test";
-		list.put(string, string.hashCode());
+		list.put(string);
 		Iterator<CountNode> itr = list.iterator();
 		if(itr.hasNext()) {
 			test = itr.next().getString();
