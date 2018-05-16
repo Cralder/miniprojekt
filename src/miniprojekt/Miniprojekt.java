@@ -87,20 +87,23 @@ public class Miniprojekt {
 			
 			for(int i = 0; i < temp.length; i++)
 			{
-				temp[i] = temp[i].trim();
+				//temp[i] = temp[i].trim();
 				System.out.println(temp[i]);
 			}
+			
+			
 			
 			for(int i = 0; i < temp.length; i++)
 			{
 				CountNode currentKeyword;
+				
 				while(itr.hasNext())
 				{
 					currentKeyword = itr.next();
 					
 					if(!(currentKeyword.getString().equals(temp[i])))
 					{
-						table.put(temp[i]);
+
 						totalLength++;
 						
 					}else {
@@ -109,6 +112,7 @@ public class Miniprojekt {
 						
 					}
 				}
+				table.put(temp[i]);
 			}
 			
 		}

@@ -7,7 +7,7 @@ class MyHashtable {
 	public CountNode[] table;
 	private int size;
 	
-	/**
+	/*
 	 * Class constructor with initial capacity
 	 */
 	public MyHashtable(int initialcapacity) {
@@ -56,7 +56,7 @@ class MyHashtable {
 				table[i].inc();
 				size++;
 			}else {
-				put(s, i++);
+				put(s, i^2);
 			}
 			
 		}
@@ -94,7 +94,7 @@ class MyHashtable {
 		}else if(table[i].getString().equals(s)) {
 			return i;
 		}else {
-			return find(s, i++);
+			return find(s, i^2);
 		}
 	}
 	
