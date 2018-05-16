@@ -89,7 +89,7 @@ class MyHashtable {
 	
 	private class HashIterator implements Iterator<CountNode>{
 		
-		private int count = -1;
+		private int count = 0;
 		
 		public HashIterator() {
 			if(table.length == 0){
@@ -98,12 +98,14 @@ class MyHashtable {
 		}
 		
 		public boolean hasNext() {
-			return count+1 < table.length;
+			return count < table.length;
 		}
 	
 		public CountNode next() {
-			CountNode out = table[++count];
-			while(out == null) {
+			CountNode out = null;
+			
+			while(out != null) {
+				out = table[count];
 				count++;
 			}
 			return out;
