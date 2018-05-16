@@ -39,10 +39,9 @@ public class Miniprojekt {
 			
 			if(in2.findBool(in1Word))
 			{
-				int in2Word = in2.find(in1Word);
-<<<<<<< HEAD
 				
-<<<<<<< HEAD
+				int in2Word = in2.find(in1Word);
+				
 				int in1WordCount = in1WordNode.getCount();
 				int in2WordCount = in2.getNode(in2Word).getCount();
 				
@@ -50,20 +49,6 @@ public class Miniprojekt {
 				
 				totalCount = totalCount + countAmount;
 				
-=======
-<<<<<<< HEAD
-				
-				
-=======
-				int in2WordCount = in2.getNode(in2Word).getCount();
->>>>>>> 41995ab743a06ae6c5a0bc46e61737b195213a3d
->>>>>>> e698c0b7dbf1f0008a223ca4d80c60851fe0e7a6
-=======
-				
-=======
-				int in2WordCount = in2.getNode(in2Word).getCount();
->>>>>>> 41995ab743a06ae6c5a0bc46e61737b195213a3d
->>>>>>> bd24dcdfb5f71be5ca3865cc339a1ad6927f07c6
 			}
 
 		}
@@ -111,7 +96,7 @@ public class Miniprojekt {
 	}
 	 
 	public void print(String file1, String file2, double comp){
-		System.out.println(file1 + " och " + file2 + " har " + comp + "% gemensasmma identifierare");
+		System.out.println(file1 + " och " + file2 + " har " + comp + "% gemensamma identifierare");
 	}
 	
 	public static void main(String[] args) {
