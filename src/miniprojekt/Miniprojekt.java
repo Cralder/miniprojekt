@@ -1,3 +1,5 @@
+
+
 package miniprojekt;
 
 import java.io.File;
@@ -9,6 +11,22 @@ public class Miniprojekt {
 
 	static int totalLength = 0;
 	
+	/**
+	 * Returns the final percentage of plagiarism in the two documents 
+	 * both arguments are the MyHashtables that will be compared to eachother
+	 * <p>
+	 * this method compares the two MyHashTables that are inputed containing all 
+	 * identifiers from the two documents you wish to compare. 
+	 * the left MyHashTable is iterated and the find() method is used
+	 * to search for the identifier inside of the second MyHashTable
+	 * if the identifier exists within the second MyHashTable the amount of 
+	 * times they are found inside both MyHashTables are summarized and added 
+	 * to the total amount of found plagiarisms.
+	 * 
+	 * @param  in1 the first MyHashtable you want to compare with the other
+	 * @param  in2 the second MyHashtable you want to compare with the first
+	 * @return the percentage of plagiarism found when comparing the documents
+	 */
 	
 	public static double comparePlagiarism(MyHashtable in1, MyHashtable in2)
 	{
@@ -19,14 +37,11 @@ public class Miniprojekt {
 		
 		while(itr1.hasNext())
 		{
-			
 			CountNode in1WordNode = itr1.next();
 			String in1Word = in1WordNode.getString();
 
-			
 			if(in2.findBool(in1Word))
-			{
-				
+			{	
 				int in2Word = in2.find(in1Word);
 				
 				int in1WordCount = in1WordNode.getCount();
@@ -34,12 +49,9 @@ public class Miniprojekt {
 				
 				int countAmount = in1WordCount + in2WordCount;
 				
-				totalCount = totalCount + countAmount;
-				
+				totalCount = totalCount + countAmount;	
 			}
-
 		}
-
 		
 		double retValue = totalCount / (in1.size() + in2.size());
 		
@@ -98,11 +110,8 @@ public class Miniprojekt {
 			Scanner in1 = new Scanner(new File(cmd.next()));
 			Scanner in2 = new Scanner(new File(cmd.next()));
 			cmd.close();
-			
-			//System.out.println(keywords.next());
-			
 
-			
+			         
 			while(keywords.hasNext())
 			{
 				keywordTable.put(keywords.next());
@@ -121,9 +130,7 @@ public class Miniprojekt {
 			itr = keywordTable.iterator(); //Testa om n�got g�r fel
 
 			MyHashtable in2Table = readFile(in2, itr);
-			
-			
-			
+
 			
 			print(in1, in2, comparePlagiarism(in1Table, in2Table));
 
