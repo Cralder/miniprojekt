@@ -82,11 +82,11 @@ public class Miniprojekt {
 		while(scan.hasNext())
 		{
 			current = scan.next();
-
-			String[] temp = current.split("\\|,|\\+|\\-|\\=|\\<|\\>|;|\\.|\\?|!|-|:|@|\\[|\\]|\\(|\\)|\\{|\\}|_|\\*|/");
+			String[] temp = current.split("\\.");
 			
 			for(int i = 0; i < temp.length; i++)
 			{
+				temp[i] = temp[i].trim();
 				System.out.println(temp[i]);
 			}
 			
@@ -97,7 +97,7 @@ public class Miniprojekt {
 				{
 					currentKeyword = itr.next();
 					
-					if(!currentKeyword.getString().equals(temp[i]))
+					if(!(currentKeyword.getString().equals(temp[i])))
 					{
 						table.put(temp[i]);
 						totalLength++;
@@ -142,7 +142,7 @@ public class Miniprojekt {
 			int total1 = totalLength;
 			totalLength = 0;
 
-			itr = keywordTable.iterator(); //Testa om nï¿½got gï¿½r fel
+			itr = keywordTable.iterator(); //Testa om något går fel
 
 			MyHashtable in2Table = readFile(in2, itr);
 			int total2 = totalLength;
