@@ -51,17 +51,24 @@ public class Miniprojekt {
 					if(currentKeyword.getString().equals(temp[i]))
 					{
 						check = false;
+
+						
+					} else if(temp[i].matches("((-|\\+)?[0-9]+(\\.[0-9]+)?)+")) {
+						check = false;
+
 					}
+
 				}
+
 				if(check) {
 					table.put(temp[i]);
 					totalLength++;
 				}
 				
 				itr = hashTable.iterator();
-				
+
 			}
-			
+
 		}
 		return table;
 	}
@@ -100,19 +107,26 @@ public class Miniprojekt {
 				
 				int in1WordCount = in1WordNode.getCount();
 				int in2WordCount = in2.getNode(in2Word).getCount();
+				int countAmount;
+				if(in1WordCount <= in2WordCount)
+				{
+					
+					countAmount = in1WordCount;
+					
+				} else {
+					
+					countAmount = in2WordCount;
+				}
 				
-				int countAmount = in1WordCount + in2WordCount;
-				
-				totalCount = totalCount + countAmount;	
+				totalCount = totalCount + countAmount;
 			}
 		}
-		
-		double retValue =  ((double) totalCount / (double) completeLength) * 100;
-		retValue = Math.round (retValue * 100.0) / 100.0; 
+
+		double retValue = ((double) totalCount*2 / (double) completeLength) * 100;
+		retValue = Math.round (retValue * 100.0) / 100.0;
 		return retValue;
 		
 	}
-	
 
 	
 	/**
@@ -123,7 +137,7 @@ public class Miniprojekt {
 	*/
 	
 	public static void print(String file1, String file2, double comp){
-		System.out.println(" Fil 1: " + file1 + " och " + "Fil 2: " + file2 + " har " + comp + "% gemensamma identifierare");
+		System.out.println("Fil 1: " + file1 + " och " + "Fil 2: " + file2 + " har " + comp + " % gemensamma identifierare");
 	}
 	
 	public static void main(String[] args) {
@@ -154,7 +168,7 @@ public class Miniprojekt {
 
 			MyHashtable in2Table = readFile(in2, keywordTable);
 			int total2 = totalLength;
-
+			
 			completeLength = total1 + total2;
 			
 			print(firstpath, secondpath, comparePlagiarism(in1Table, in2Table));
