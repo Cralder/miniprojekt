@@ -22,8 +22,8 @@ public class Miniprojekt {
 			
 			if(in2.findBool(in1Word))
 			{
-				
 				int in2Word = in2.find(in1Word);
+				
 				
 			}
 
@@ -72,7 +72,7 @@ public class Miniprojekt {
 	}
 	 
 	public void print(String file1, String file2, double comp){
-		System.out.println(file1 + " och " + file2 + " har " + comp + "% gemensamma identifierare");
+		System.out.println(file1 + " och " + file2 + " har " + comp + "% gemensasmma identifierare");
 	}
 	
 	public static void main(String[] args) {
