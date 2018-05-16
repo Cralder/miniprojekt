@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 public class Miniprojekt {
-
+	static int completeLength = 0;
 	static int totalLength = 0;
 	
 	/**
@@ -31,9 +31,8 @@ public class Miniprojekt {
 	public static double comparePlagiarism(MyHashtable in1, MyHashtable in2)
 	{
 		Iterator<CountNode> itr1 = in1.iterator();
-		Iterator<CountNode> itr2 = in2.iterator();
 		int totalCount = 0;
-		int totalAmount = 0;
+
 		
 		while(itr1.hasNext())
 		{
@@ -53,12 +52,27 @@ public class Miniprojekt {
 			}
 		}
 		
-		double retValue = totalCount / (in1.size() + in2.size());
+		double retValue = totalCount / completeLength;
 		
 		return retValue;
 		
 	}
 	
+	/**
+	 * Returns the inputed java files as MyHashTables 
+	 * one argument is a scanner and the other is an iterator
+	 * <p>
+	 * this method uses a scanner and an iterator to iterate a java file and 
+	 * split the identifiers into seperate strings which are then put
+	 * into a MyHashTable. The method also uses the keyword text-file to
+	 * compare with the identifiers that are scanned from the java file.
+	 * If the identifier is in the keywords file it is simply added to the total length of the document
+	 * 
+	 * @param  scan the scanner that is used to read a java file
+	 * @param  itr is an iterator that you wish to use to iterate the files
+	 * @return a MyHashTable containing every identifier found inside the java file
+	 * including the amount of times it occured
+	 */
 	
 	public static MyHashtable readFile(Scanner scan, Iterator<CountNode> itr)
 	{
@@ -110,7 +124,6 @@ public class Miniprojekt {
 			Scanner in1 = new Scanner(new File(cmd.next()));
 			Scanner in2 = new Scanner(new File(cmd.next()));
 			cmd.close();
-
 			         
 			while(keywords.hasNext())
 			{
@@ -126,6 +139,8 @@ public class Miniprojekt {
 			itr = keywordTable.iterator(); //Testa om n�t g�r fel
 			int total2 = totalLength;
 
+			
+			completeLength = total1 + total2;
 
 			itr = keywordTable.iterator(); //Testa om n�got g�r fel
 
