@@ -22,8 +22,8 @@ public class Miniprojekt {
 			
 			if(in2.findBool(in1Word))
 			{
-				int in2Word = in2.find(in1Word);
 				
+				int in2Word = in2.find(in1Word);
 				
 			}
 
