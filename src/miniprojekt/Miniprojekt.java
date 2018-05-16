@@ -53,6 +53,7 @@ public class Miniprojekt {
 		}
 		
 		double retValue =  ((double) totalCount / (double) completeLength) * 100;
+		retValue = Math.round (retValue * 100.0) / 100.0; 
 		return retValue;
 		
 	}
