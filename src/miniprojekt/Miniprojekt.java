@@ -4,7 +4,6 @@ package miniprojekt;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -127,7 +126,6 @@ public class Miniprojekt {
 	public static void main(String[] args) {
 		
 		MyHashtable keywordTable = new MyHashtable();
-		Iterator<CountNode> itr = keywordTable.iterator();
 		
 		try {
 			Scanner keywords = new Scanner(new File("src\\miniprojekt\\javanyckelord.txt"));

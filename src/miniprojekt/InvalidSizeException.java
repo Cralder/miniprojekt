@@ -2,6 +2,11 @@ package miniprojekt;
 
 public class InvalidSizeException extends RuntimeException {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
      * Constructs a InvalidSizeException with no detail message.
      */
 	public InvalidSizeException() {

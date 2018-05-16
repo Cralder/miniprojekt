@@ -27,7 +27,7 @@ public class MyHashtableTest {
 	public void testFindStringInt() {
 		String string = "test";
 		list.put(string, string.hashCode());
-		assertEquals("Check that return retruns the correct int value",list.find(string), string.hashCode());
+		assertEquals("Check that return retruns the correct int value",list.find(string, string.hashCode()), string.hashCode());
 	}
 
 	@Test

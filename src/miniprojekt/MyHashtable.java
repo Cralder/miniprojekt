@@ -92,7 +92,7 @@ class MyHashtable {
 	 */
 	
 	public int find(String s, int i) {
-		if(i > table.length) {
+		if(i > table.length || i < 0 || table[i] == null) {
 			return -1;
 		}else if(table[i].getString().equals(s)) {
 			return i;

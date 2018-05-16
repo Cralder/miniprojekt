@@ -25,9 +25,6 @@ class CountNode {
 	}
 	@Override
 	public int hashCode() {
-		
-		
-		
 		double hash = Math.abs(s.hashCode());
 		
 		hash = hash % 541;
