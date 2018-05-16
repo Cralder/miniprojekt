@@ -85,7 +85,7 @@ public class Miniprojekt {
 			Scanner cmd = new Scanner(System.in);
 			Scanner in1 = new Scanner(new File(cmd.next()));
 			Scanner in2 = new Scanner(new File(cmd.next()));
-			cmd.close();
+			cmd.close(); //test
 			System.out.println(keywords.next());
 			
 
