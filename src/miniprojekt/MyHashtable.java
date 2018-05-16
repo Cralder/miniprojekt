@@ -31,7 +31,7 @@ class MyHashtable {
 			put(s, i);
 			
 		}else{
-			if(table[i].equals(null)) {
+			if(table[i] == null) {
 				table[i] = new CountNode(s, 1);
 				size++;
 			}else if(table[i].getString().equals(s)) {
