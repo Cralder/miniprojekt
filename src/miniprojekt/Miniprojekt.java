@@ -14,25 +14,57 @@ public class Miniprojekt {
 	public static double comparePlagiarism(MyHashtable in1, MyHashtable in2)
 	{
 		Iterator<CountNode> itr1 = in1.iterator();
+		Iterator<CountNode> itr2 = in2.iterator();
+		int totalCount = 0;
+		int totalAmount = 0;
+		
+		while(itr1.hasNext())
+		{
+			totalAmount = totalAmount++;
+			itr1.next();
+		}
+		
+		while(itr2.hasNext())
+		{
+			totalAmount = totalAmount++;
+			itr2.next();
+		}
 		
 		while(itr1.hasNext())
 		{
 			
-			String in1Word = itr1.next().getString();
+			CountNode in1WordNode = itr1.next();
+			String in1Word = in1WordNode.getString();
+
 			
 			if(in2.findBool(in1Word))
 			{
-				
 				int in2Word = in2.find(in1Word);
+<<<<<<< HEAD
+				
+				int in1WordCount = in1WordNode.getCount();
 				int in2WordCount = in2.getNode(in2Word).getCount();
+				
+				int countAmount = in1WordCount + in2WordCount;
+				
+				totalCount = totalCount + countAmount;
+				
+=======
+<<<<<<< HEAD
+				
+				
+=======
+				int in2WordCount = in2.getNode(in2Word).getCount();
+>>>>>>> 41995ab743a06ae6c5a0bc46e61737b195213a3d
+>>>>>>> e698c0b7dbf1f0008a223ca4d80c60851fe0e7a6
 			}
 
 		}
 		
 		
-		
-		
+
 		return 0;
+		
 	}
 	
 	
@@ -72,7 +104,7 @@ public class Miniprojekt {
 	}
 	 
 	public void print(String file1, String file2, double comp){
-		System.out.println(file1 + " och " + file2 + " har " + comp + "% gemensamma identifierare");
+		System.out.println(file1 + " och " + file2 + " har " + comp + "% gemensasmma identifierare");
 	}
 	
 	public static void main(String[] args) {
