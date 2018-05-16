@@ -90,13 +90,6 @@ public class Miniprojekt {
 			
 			for(int i = 0; i < temp.length; i++)
 			{
-				//temp[i] = temp[i].trim();
-			}
-			
-			
-			
-			for(int i = 0; i < temp.length; i++)
-			{
 				CountNode currentKeyword;
 				boolean check = true;
 				
@@ -147,11 +140,11 @@ public class Miniprojekt {
 			Scanner in2 = new Scanner(new File(secondpath));
 			cmd.close();
 			         
-			while(keywords.hasNext())
+			/*while(keywords.hasNext())
 			{
 				keywordTable.put(keywords.next());
 				System.out.println(keywordTable.toString());
-			}
+			}*/
 			
 
 			

@@ -40,6 +40,7 @@ class MyHashtable {
 	 */
 	public void put(String s, int i) {
 		
+		
 		if(i > table.length) {
 			CountNode[] temp = new CountNode[table.length*2];
 			for(int j = 0; j<table.length; j++) {
@@ -49,6 +50,9 @@ class MyHashtable {
 			put(s, i);
 			
 		}else{
+			
+			System.out.println(i);
+			
 			if(table[i] == null) {
 				table[i] = new CountNode(s, 1);
 				size++;
@@ -56,7 +60,8 @@ class MyHashtable {
 				table[i].inc();
 				size++;
 			}else {
-				put(s, i^2);
+				int a = i+1;
+				put(s, i+1);
 			}
 			
 		}
@@ -94,7 +99,7 @@ class MyHashtable {
 		}else if(table[i].getString().equals(s)) {
 			return i;
 		}else {
-			return find(s, i^2);
+			return find(s, i+1);
 		}
 	}
 	
@@ -125,12 +130,14 @@ class MyHashtable {
 	 */
 	
 	public boolean findBool(String s, int i) {
-		if(i > table.length) {
+
+		
+		if(i > table.length || i < 0 || table[i] == null) {
 			return false;
 		}else if(table[i].getString().equals(s)) {
 			return true;
 		}else {
-			return findBool(s, i^2);
+			return findBool(s, i+1);
 		}
 	}
 	
