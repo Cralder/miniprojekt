@@ -56,7 +56,7 @@ class MyHashtable {
 	public int find(String s, int i) {
 		if(i > table.length) {
 			return -1;
-		}else if(table[i].equals(s)) {
+		}else if(table[i].getString().equals(s)) {
 			return i;
 		}else {
 			return find(s, i^2);
@@ -74,7 +74,7 @@ class MyHashtable {
 	public boolean findBool(String s, int i) {
 		if(i > table.length) {
 			return false;
-		}else if(table[i].equals(s)) {
+		}else if(table[i].getString().equals(s)) {
 			return true;
 		}else {
 			return findBool(s, i^2);
