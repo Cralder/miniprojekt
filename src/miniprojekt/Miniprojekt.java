@@ -12,53 +12,6 @@ public class Miniprojekt {
 	static int totalLength = 0;
 	
 	/**
-	 * Returns the final percentage of plagiarism in the two documents 
-	 * both arguments are the MyHashtables that will be compared to eachother
-	 * <p>
-	 * this method compares the two MyHashTables that are inputed containing all 
-	 * identifiers from the two documents you wish to compare. 
-	 * the left MyHashTable is iterated and the find() method is used
-	 * to search for the identifier inside of the second MyHashTable
-	 * if the identifier exists within the second MyHashTable the amount of 
-	 * times they are found inside both MyHashTables are summarized and added 
-	 * to the total amount of found plagiarisms.
-	 * 
-	 * @param  in1 the first MyHashtable you want to compare with the other
-	 * @param  in2 the second MyHashtable you want to compare with the first
-	 * @return the percentage of plagiarism found when comparing the documents
-	 */
-	
-	public static double comparePlagiarism(MyHashtable in1, MyHashtable in2)
-	{
-		Iterator<CountNode> itr1 = in1.iterator();
-		int totalCount = 0;
-
-		
-		while(itr1.hasNext())
-		{
-			CountNode in1WordNode = itr1.next();
-			String in1Word = in1WordNode.getString();
-
-			if(in2.findBool(in1Word))
-			{	
-				int in2Word = in2.find(in1Word);
-				
-				int in1WordCount = in1WordNode.getCount();
-				int in2WordCount = in2.getNode(in2Word).getCount();
-				
-				int countAmount = in1WordCount + in2WordCount;
-				
-				totalCount = totalCount + countAmount;	
-			}
-		}
-		
-		double retValue =  ((double) totalCount / (double) completeLength) * 100;
-		retValue = Math.round (retValue * 100.0) / 100.0; 
-		return retValue;
-		
-	}
-	
-	/**
 	 * Returns the inputed java files as MyHashTables 
 	 * one argument is a scanner and the other is an iterator
 	 * <p>
@@ -112,6 +65,55 @@ public class Miniprojekt {
 		}
 		return table;
 	}
+	
+	/**
+	 * Returns the final percentage of plagiarism in the two documents 
+	 * both arguments are the MyHashtables that will be compared to eachother
+	 * <p>
+	 * this method compares the two MyHashTables that are inputed containing all 
+	 * identifiers from the two documents you wish to compare. 
+	 * the left MyHashTable is iterated and the find() method is used
+	 * to search for the identifier inside of the second MyHashTable
+	 * if the identifier exists within the second MyHashTable the amount of 
+	 * times they are found inside both MyHashTables are summarized and added 
+	 * to the total amount of found plagiarisms.
+	 * 
+	 * @param  in1 the first MyHashtable you want to compare with the other
+	 * @param  in2 the second MyHashtable you want to compare with the first
+	 * @return the percentage of plagiarism found when comparing the documents
+	 */
+	
+	public static double comparePlagiarism(MyHashtable in1, MyHashtable in2)
+	{
+		Iterator<CountNode> itr1 = in1.iterator();
+		int totalCount = 0;
+
+		
+		while(itr1.hasNext())
+		{
+			CountNode in1WordNode = itr1.next();
+			String in1Word = in1WordNode.getString();
+
+			if(in2.findBool(in1Word))
+			{	
+				int in2Word = in2.find(in1Word);
+				
+				int in1WordCount = in1WordNode.getCount();
+				int in2WordCount = in2.getNode(in2Word).getCount();
+				
+				int countAmount = in1WordCount + in2WordCount;
+				
+				totalCount = totalCount + countAmount;	
+			}
+		}
+		
+		double retValue =  ((double) totalCount / (double) completeLength) * 100;
+		retValue = Math.round (retValue * 100.0) / 100.0; 
+		return retValue;
+		
+	}
+	
+
 	
 	/**
 	* Prints the filenames and the result of the comparison between the two files.  
