@@ -20,18 +20,6 @@ public class Miniprojekt {
 		
 		while(itr1.hasNext())
 		{
-			totalAmount = totalAmount++;
-			itr1.next();
-		}
-		
-		while(itr2.hasNext())
-		{
-			totalAmount = totalAmount++;
-			itr2.next();
-		}
-		
-		while(itr1.hasNext())
-		{
 			
 			CountNode in1WordNode = itr1.next();
 			String in1Word = in1WordNode.getString();
@@ -52,10 +40,11 @@ public class Miniprojekt {
 			}
 
 		}
-		
-		
 
-		return 0;
+		
+		double retValue = totalCount / (in1.size() + in2.size());
+		
+		return retValue;
 		
 	}
 	
