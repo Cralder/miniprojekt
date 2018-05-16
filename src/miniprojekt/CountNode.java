@@ -32,6 +32,10 @@ class CountNode {
 		
 		hash = hash % 541;
 		
+		if(hash < 2) {
+			hash = 2;
+		}
+		
 		return (int) hash;
 		
 		
