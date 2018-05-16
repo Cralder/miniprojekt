@@ -42,5 +42,20 @@ public class MyHashtableTest {
 		
 		assertEquals("Check that return retruns the correct int value",test, string);
 	}
-
+	
+	@Test
+	public void testSize() {
+		String test = "test";
+		list.put(test);
+		assertEquals("Check if the size has increased",list.size(),1);
+	}
+	
+	@Test
+	public void testgetNode() {
+		CountNode testnode = new CountNode("hi",1);
+		list.put("hi",1);
+		assertEquals("Check if testnode is equal to node in list",list.getNode(1).getString(),testnode.getString());
+		assertEquals("Check if testnode is equal to node in list",list.getNode(1).getCount(),testnode.getCount());
+	}
+	
 }
