@@ -101,9 +101,7 @@ public class Miniprojekt {
 			
 			//System.out.println(keywords.next());
 			
-			keywords.close();
-			in1.close();
-			in2.close();
+
 			
 			while(keywords.hasNext())
 			{
@@ -130,7 +128,9 @@ public class Miniprojekt {
 			print(in1, in2, comparePlagiarism(in1Table, in2Table));
 
 
-
+			keywords.close();
+			in1.close();
+			in2.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
