@@ -92,9 +92,9 @@ class MyHashtable {
 		
 		private int count = 0;
 		
-		public HashIterator() {
+		public HashIterator(){
 			if(table.length == 0){
-				return;
+				throw new InvalidSizeException();
 			}
 		}
 		
