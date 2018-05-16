@@ -24,7 +24,7 @@ public class Miniprojekt {
 			{
 				
 				int in2Word = in2.find(in1Word);
-				
+				int in2WordCount = in2.getNode(in2Word).getCount();
 			}
 
 		}
