@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class Miniprojekt {
 	static int completeLength = 0;
+	static int compareLength = 0;
 	static int totalLength = 0;
 	
 	/**
@@ -52,17 +53,18 @@ public class Miniprojekt {
 					if(currentKeyword.getString().equals(temp[i]))
 					{
 						check = false;
-
+						totalLength++;
 						
 					} else if(temp[i].matches("((-|\\+)?[0-9]+(\\.[0-9]+)?)+")) {
 						check = false;
-
+						totalLength++;
 					}
 
 				}
 
 				if(check) {
 					table.put(temp[i]);
+					compareLength++;
 					totalLength++;
 				}
 				
@@ -108,19 +110,13 @@ public class Miniprojekt {
 				
 				int in1WordCount = in1WordNode.getCount();
 				int in2WordCount = in2.getNode(in2Word).getCount();
-				int countAmount;
-				if(in1WordCount <= in2WordCount)
-				{
-					
-					countAmount = in1WordCount;
-					
-				} else {
-					
-					countAmount = in2WordCount;
-				}
+				int countAmount = 0;
+
+				countAmount = (in1WordCount <= in2WordCount) ? in1WordCount : in2WordCount;
 				
 				totalCount = totalCount + countAmount;
 			}
+
 		}
 
 		double retValue = ((double) totalCount*2 / (double) completeLength) * 100;
@@ -163,12 +159,12 @@ public class Miniprojekt {
 			
 			
 			MyHashtable in1Table = readFile(in1, keywordTable);
-			int total1 = totalLength;
-			totalLength = 0;
+			int total1 = compareLength;
+			compareLength = 0;
 
 
 			MyHashtable in2Table = readFile(in2, keywordTable);
-			int total2 = totalLength;
+			int total2 = compareLength;
 			
 			completeLength = total1 + total2;
 			
