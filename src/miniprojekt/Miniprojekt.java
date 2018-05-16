@@ -15,7 +15,6 @@ public class Miniprojekt {
 		String current;
 		MyHashtable table = new MyHashtable();
 
-		
 		while(scan.hasNextLine())
 		{
 			current = scan.nextLine();
@@ -31,14 +30,13 @@ public class Miniprojekt {
 					
 					if(!currentKeyword.getString().equals(temp[i]))
 					{
-						
 						table.put(temp[i]);
 						totalLength++;
 						
 					}else {
 						
 						totalLength++;
-					
+						
 					}
 				}
 			}
