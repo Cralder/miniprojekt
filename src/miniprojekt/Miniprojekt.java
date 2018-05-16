@@ -82,8 +82,12 @@ public class Miniprojekt {
 		while(scan.hasNext())
 		{
 			current = scan.next();
+<<<<<<< HEAD
+=======
 
-			String[] temp = current.split("\\t|,|;|\\.|\\?|!|-|:|@|\\[|\\]|\\(|\\)|\\{|\\}|_|\\*|/");
+			String[] temp = current.split("\\|,|;|\\.|\\?|!|-|:|@|\\[|\\]|\\(|\\)|\\{|\\}|_|\\*|/");
+>>>>>>> fa6fa2fbedd2cf2dbaf677446d662d1de86440be
+
 			
 			for(int i = 0; i<temp.length; i++) {
 				System.out.println(temp[i]);
@@ -91,6 +95,7 @@ public class Miniprojekt {
 			
 			for(int i = 0; i < temp.length; i++)
 			{
+				
 				CountNode currentKeyword;
 				while(itr.hasNext())
 				{
@@ -101,7 +106,7 @@ public class Miniprojekt {
 						table.put(temp[i]);
 						totalLength++;
 						
-					}else {
+					} else {
 						
 						totalLength++;
 						
