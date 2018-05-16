@@ -37,7 +37,8 @@ public class Miniprojekt {
 		while(scan.hasNext())
 		{
 			current = scan.next();
-			String[] temp = current.split("\\.");
+			String[] temp = current.split("(?=\\W)|(?<=\\W)");
+
 			
 			for(int i = 0; i < temp.length; i++)
 			{
@@ -68,7 +69,7 @@ public class Miniprojekt {
 				itr = hashTable.iterator();
 
 			}
-
+				
 		}
 		return table;
 	}
