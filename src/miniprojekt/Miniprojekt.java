@@ -7,8 +7,32 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 public class Miniprojekt {
-	
+
 	static int totalLength = 0;
+	
+	
+	public static double comparePlagiarism(MyHashtable in1, MyHashtable in2)
+	{
+		Iterator<CountNode> itr1 = in1.iterator();
+		
+		while(itr1.hasNext())
+		{
+			
+			String in1Word = itr1.next().getString();
+			
+			if(in2.findbool(in1Word))
+			{
+				in2.find(in1Word)
+			}
+
+		}
+		
+		
+		
+		
+		return 0;
+	}
+	
 	
 	public static MyHashtable readFile(Scanner scan, Iterator<CountNode> itr)
 	{
@@ -42,7 +66,6 @@ public class Miniprojekt {
 			}
 			
 		}
-		
 		return table;
 	}
 	 
@@ -84,11 +107,7 @@ public class Miniprojekt {
 			
 			
 			
-			
-				
 
-			
-			
 			in1.close();
 			in2.close();
 			keywords.close();

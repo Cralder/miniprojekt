@@ -16,7 +16,6 @@ class MyHashtable {
 	
 	public void put(String s, int i) {
 		
-		
 		if(i > table.length) {
 			CountNode[] temp = new CountNode[table.length*2];
 			for(int j = 0; j<table.length; j++) {
