@@ -51,9 +51,10 @@ public class Miniprojekt {
 				totalCount = totalCount + countAmount;	
 			}
 		}
-		System.out.println(completeLength);
-		System.out.println(totalCount);
-		double retValue = (totalCount / completeLength) * 100;
+		System.out.println("Completelength:" + completeLength);
+		System.out.println("totalcount: " + totalCount);
+		
+		double retValue =  ((double) totalCount / (double) completeLength) * 100;
 		return retValue;
 		
 	}
@@ -113,7 +114,14 @@ public class Miniprojekt {
 		}
 		return table;
 	}
-	 
+	
+	/*
+	* Prints the filenames and the result of the comparison between the two files.  
+	* @param file1 The first file
+	* @param file2 The second file that the first file compares to
+	* @param comp The percentage of plagiarism between file1 and file2  
+	*/
+	
 	public static void print(String file1, String file2, double comp){
 		System.out.println(" Fil 1: " + file1 + " och " + "Fil 2: " + file2 + " har " + comp + "% gemensamma identifierare");
 	}
@@ -147,7 +155,6 @@ public class Miniprojekt {
 			MyHashtable in2Table = readFile(in2, itr);
 			int total2 = totalLength;
 
-			
 			completeLength = total1 + total2;
 			
 			print(firstpath, secondpath, comparePlagiarism(in1Table, in2Table));
