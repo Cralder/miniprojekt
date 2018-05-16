@@ -79,11 +79,15 @@ public class Miniprojekt {
 		String current;
 		MyHashtable table = new MyHashtable();
 
-		while(scan.hasNextLine())
+		while(scan.hasNext())
 		{
-			current = scan.nextLine();
+			current = scan.next();
 
 			String[] temp = current.split("\\t|,|;|\\.|\\?|!|-|:|@|\\[|\\]|\\(|\\)|\\{|\\}|_|\\*|/");
+			
+			for(int i = 0; i<temp.length; i++) {
+				System.out.println(temp[i]);
+			}
 			
 			for(int i = 0; i < temp.length; i++)
 			{
