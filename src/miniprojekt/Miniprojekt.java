@@ -52,8 +52,6 @@ public class Miniprojekt {
 				totalCount = totalCount + countAmount;	
 			}
 		}
-		System.out.println("Completelength:" + completeLength);
-		System.out.println("totalcount: " + totalCount);
 		
 		double retValue =  ((double) totalCount / (double) completeLength) * 100;
 		return retValue;
@@ -140,11 +138,10 @@ public class Miniprojekt {
 			Scanner in2 = new Scanner(new File(secondpath));
 			cmd.close();
 			         
-			/*while(keywords.hasNext())
+			while(keywords.hasNext())
 			{
 				keywordTable.put(keywords.next());
-				System.out.println(keywordTable.toString());
-			}*/
+			}
 			
 
 			

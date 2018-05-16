@@ -51,7 +51,6 @@ class MyHashtable {
 			
 		}else{
 			
-			System.out.println(i);
 			
 			if(table[i] == null) {
 				table[i] = new CountNode(s, 1);
@@ -60,7 +59,6 @@ class MyHashtable {
 				table[i].inc();
 				size++;
 			}else {
-				int a = i+1;
 				put(s, i+1);
 			}
 			
