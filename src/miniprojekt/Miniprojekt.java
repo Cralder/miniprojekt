@@ -98,6 +98,7 @@ public class Miniprojekt {
 			for(int i = 0; i < temp.length; i++)
 			{
 				CountNode currentKeyword;
+				boolean check = true;
 				
 				while(itr.hasNext())
 				{
@@ -105,17 +106,17 @@ public class Miniprojekt {
 					
 					if(!(currentKeyword.getString().equals(temp[i])))
 					{
-						table.put(temp[i]);
-						totalLength++;
 						
-					}else {
-						
-						totalLength++;
+						check = false;
 						
 					}
 				}
-
+				if(check) {
+					table.put(temp[i]);
+				}
+				
 				itr = hashTable.iterator();
+				totalLength++;
 			}
 			
 		}
