@@ -23,4 +23,17 @@ class CountNode {
 	public String getString() {
 		return s;
 	}
+	@Override
+	public int hashCode() {
+		
+		
+		
+		double hash = Math.abs(s.hashCode());
+		
+		hash = hash % 541;
+		
+		return (int) hash;
+		
+		
+	}
 }

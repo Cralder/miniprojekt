@@ -12,7 +12,7 @@ class MyHashtable {
 	}
 	
 	public MyHashtable() {
-		this(64);
+		this(127);
 	}
 	
 	public CountNode getNode(int i) {
@@ -51,7 +51,7 @@ class MyHashtable {
 	}
 	
 	public void put(String s) {
-		put(s, s.hashCode());
+		put(s, new CountNode(s,1).hashCode());
 	}
 	
 	public int find(String s, int i) {
@@ -60,12 +60,12 @@ class MyHashtable {
 		}else if(table[i].getString().equals(s)) {
 			return i;
 		}else {
-			return find(s, i^2);
+			return find(s, i+1);
 		}
 	}
 	
 	public int find(String s) {
-		return find(s, s.hashCode());
+		return find(s, new CountNode(s,1).hashCode());
 	}
 	
 	public Iterator<CountNode> iterator(){
@@ -83,8 +83,10 @@ class MyHashtable {
 	}
 	
 	public boolean findBool(String s) {
-		return findBool(s,s.hashCode());
+		return findBool(s,new CountNode(s,1).hashCode());
 	}
+	
+	
 	
 	
 	private class HashIterator implements Iterator<CountNode>{
@@ -104,7 +106,7 @@ class MyHashtable {
 		public CountNode next() {
 			CountNode out = null;
 			
-			while(out == null) {
+			while(out == null && count<table.length) {
 				out = table[count];
 				count++;
 			}
@@ -114,5 +116,6 @@ class MyHashtable {
 		public void remove() {}
 	
 	}
+	
 	
 }
